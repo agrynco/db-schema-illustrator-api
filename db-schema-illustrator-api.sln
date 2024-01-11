@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoapService", "SoapService\SoapService.csproj", "{066E5DE4-F94C-4983-9715-2D5B16922482}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLayer", "ServiceLayer\ServiceLayer.csproj", "{A52A4DAB-48AB-4040-8A9B-A240384DEFB9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -10,5 +14,15 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{066E5DE4-F94C-4983-9715-2D5B16922482}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{066E5DE4-F94C-4983-9715-2D5B16922482}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{066E5DE4-F94C-4983-9715-2D5B16922482}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{066E5DE4-F94C-4983-9715-2D5B16922482}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A52A4DAB-48AB-4040-8A9B-A240384DEFB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A52A4DAB-48AB-4040-8A9B-A240384DEFB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A52A4DAB-48AB-4040-8A9B-A240384DEFB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A52A4DAB-48AB-4040-8A9B-A240384DEFB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
