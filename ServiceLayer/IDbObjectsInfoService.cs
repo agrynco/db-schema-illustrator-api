@@ -7,5 +7,11 @@ public interface IDbObjectsInfoService
 {
     [OperationContract]
     [FaultContract(typeof(MissingTablesFault))]
-    Table[] GetTables();
+    TableInfo[] GetTables(string schemaName);
+
+    [OperationContract]
+    ForeignKeyInfo[] GetForeignKeys(string schemaName);
+
+    [OperationContract]
+    string[] GetSchemas();
 }

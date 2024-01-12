@@ -3,20 +3,22 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using ServiceLayer;
 using SoapCore;
 
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSoapCore();
 
 builder.Services.TryAddSingleton<DbObjectsInfoService>();
 
-var app = builder.Build();
+WebApplication app = builder.Build();
 app.UseRouting();
 
-app.UseEndpoints(endpoints => { 
+app.UseEndpoints(endpoints =>
+{
     endpoints.UseSoapEndpoint<DbObjectsInfoService>(
-        path: "/DbObjectsInfoService.asmx", 
-        encoder: new SoapEncoderOptions(), 
-        serializer: SoapSerializer.DataContractSerializer, 
-        caseInsensitivePath: true); });
+        "/DbObjectsInfoService.asmx",
+        new SoapEncoderOptions(),
+        SoapSerializer.XmlSerializer,
+        true);
+});
 
 app.Run();

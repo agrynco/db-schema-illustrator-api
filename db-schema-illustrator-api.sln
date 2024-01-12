@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoapService", "SoapService\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLayer", "ServiceLayer\ServiceLayer.csproj", "{A52A4DAB-48AB-4040-8A9B-A240384DEFB9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoapProxy", "SoapProxy\SoapProxy.csproj", "{340DB87D-A504-496D-B200-31EA4605E035}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLayerTests", "ServiceLayerTests\ServiceLayerTests.csproj", "{FD56F72F-6007-4AA6-B55C-E4536A1D277E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,13 @@ Global
 		{A52A4DAB-48AB-4040-8A9B-A240384DEFB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A52A4DAB-48AB-4040-8A9B-A240384DEFB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A52A4DAB-48AB-4040-8A9B-A240384DEFB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{340DB87D-A504-496D-B200-31EA4605E035}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{340DB87D-A504-496D-B200-31EA4605E035}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{340DB87D-A504-496D-B200-31EA4605E035}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{340DB87D-A504-496D-B200-31EA4605E035}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD56F72F-6007-4AA6-B55C-E4536A1D277E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD56F72F-6007-4AA6-B55C-E4536A1D277E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD56F72F-6007-4AA6-B55C-E4536A1D277E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD56F72F-6007-4AA6-B55C-E4536A1D277E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
