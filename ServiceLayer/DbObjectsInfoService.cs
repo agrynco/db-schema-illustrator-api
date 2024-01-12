@@ -8,7 +8,16 @@ public class DbObjectsInfoService : IDbObjectsInfoService
 {
     private readonly string _connectionString;
 
-    public DbObjectsInfoService(string connectionString) { _connectionString = connectionString; }
+    // public DbObjectsInfoService(IDbObjectsInfoServiceConfiguration dbObjectsInfoServiceConfiguration)
+    // {
+    //     _connectionString = dbObjectsInfoServiceConfiguration.ConnectionString;
+    // }
+
+    public DbObjectsInfoService()
+    {
+        _connectionString =
+            "Server=127.0.0.1;Database=AdventureWorks2022;User Id=sa;Password=k6bR%YM3;TrustServerCertificate=true;";
+    }
 
     public ForeignKeyInfo[] GetForeignKeys(string schemaName)
     {

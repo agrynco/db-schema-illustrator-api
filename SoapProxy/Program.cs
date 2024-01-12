@@ -8,6 +8,7 @@ using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
+using SoapProxy.IDbObjectsInfoService;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -35,9 +36,10 @@ builder.Services.AddSwaggerGen(c =>
 
 WebApplication app = builder.Build();
 
-// var tables = new DbObjectsInfoServiceClient().GetTables();
+// var dbObjectsInfoServiceClient = new DbObjectsInfoServiceClient();
+// GetTablesResponse? tables = dbObjectsInfoServiceClient.GetTablesAsync("Person").GetAwaiter().GetResult();
 //
-// Console.WriteLine(tables.Length);
+// Console.WriteLine(tables.Body.GetTablesResult.Length);
 
 app.UseSwagger();
 app.UseSwaggerUI();
