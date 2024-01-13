@@ -5,17 +5,48 @@ using SoapProxy.IDbObjectsInfoService;
 
 public class SoapProxyController : ApiControllerBase
 {
-    [HttpGet]
-    [Route("")]
-    public async Task<IActionResult> GetDbObjectsInof()
-    {
-        var endpointConfiguration = DbObjectsInfoServiceClient.EndpointConfiguration.BasicHttpBinding_IDbObjectsInfoService_soap;
+    private readonly IDbObjectsInfoService _dbObjectsInfoService;
 
-        var serviceClient = new DbObjectsInfoServiceClient(endpointConfiguration);
-        
-        string remoteAddress = "http://localhost:5000/DbObjectsInfoService.asmx";
-        var serviceClientWithRemoteAddress = new DbObjectsInfoServiceClient(endpointConfiguration, remoteAddress);
-        
-        return Ok(await serviceClientWithRemoteAddress.GetTablesAsync("Person"));
+    public SoapProxyController(IDbObjectsInfoService dbObjectsInfoService)
+    {
+        _dbObjectsInfoService = dbObjectsInfoService;
+    }
+
+    [HttpGet]
+    [Route("tables/{schemaName}")]
+    public async Task<IActionResult> GetTables()
+    {
+        var request = new GetTablesRequest
+        {
+            Body = new GetTablesRequestBody
+            {
+                schemaName = "Person"
+            }
+        };
+
+        return Ok(await _dbObjectsInfoService.GetTablesAsync(request));
+    }
+
+    [HttpGet]
+    [Route("foreign-keys/{schemaName}")]
+    public async Task<IActionResult> GetForeignKeys(string schemaName)
+    {
+        var request = new GetForeignKeysRequest
+        {
+            Body = new GetForeignKeysRequestBody
+            {
+                schemaName = schemaName
+            }
+        };
+
+        return Ok(await _dbObjectsInfoService.GetForeignKeysAsync(request));
+    }
+
+    [HttpGet]
+    [Route("schemas")]
+    public async Task<IActionResult> GetSchemas()
+    {
+        SchemaInfo[]? arrayOfString = await _dbObjectsInfoService.GetSchemasAsync();
+        return Ok(arrayOfString);
     }
 }

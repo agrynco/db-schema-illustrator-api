@@ -13,5 +13,5 @@ public interface IDbObjectsInfoService
     ForeignKeyInfo[] GetForeignKeys(string schemaName);
 
     [OperationContract]
-    string[] GetSchemas();
+    SchemaInfo[] GetSchemas();
 }

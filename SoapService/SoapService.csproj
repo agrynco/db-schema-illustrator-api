@@ -19,7 +19,14 @@
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\Common\Common.csproj" />
         <ProjectReference Include="..\ServiceLayer\ServiceLayer.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="appsettings.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>
