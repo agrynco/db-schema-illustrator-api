@@ -12,6 +12,13 @@ using SoapProxy.IDbObjectsInfoService;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddTransient<IDbObjectsInfoService>(_ =>
+{
+    const DbObjectsInfoServiceClient.EndpointConfiguration endpointConfiguration = DbObjectsInfoServiceClient.EndpointConfiguration.BasicHttpBinding_IDbObjectsInfoService_soap;
+    const string remoteAddress = "http://localhost:5000/DbObjectsInfoService.asmx";
+    return new DbObjectsInfoServiceClient(endpointConfiguration, remoteAddress);
+});
+
 builder.Services.AddMvc().AddNewtonsoftJson(options =>
 {
     options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;

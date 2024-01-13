@@ -170,22 +170,22 @@ namespace SoapProxy.IDbObjectsInfoService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ArrayOfString", Namespace="http://tempuri.org/")]
-    public partial class ArrayOfString : object
+    [System.Runtime.Serialization.DataContractAttribute(Name="SchemaInfo", Namespace="http://tempuri.org/")]
+    public partial class SchemaInfo : object
     {
         
-        private string stringField;
+        private string NameField;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string @string
+        public string Name
         {
             get
             {
-                return this.stringField;
+                return this.NameField;
             }
             set
             {
-                this.stringField = value;
+                this.NameField = value;
             }
         }
     }
@@ -202,7 +202,7 @@ namespace SoapProxy.IDbObjectsInfoService
         System.Threading.Tasks.Task<SoapProxy.IDbObjectsInfoService.GetForeignKeysResponse> GetForeignKeysAsync(SoapProxy.IDbObjectsInfoService.GetForeignKeysRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDbObjectsInfoService/GetSchemas", ReplyAction="*")]
-        System.Threading.Tasks.Task<SoapProxy.IDbObjectsInfoService.ArrayOfString> GetSchemasAsync();
+        System.Threading.Tasks.Task<SoapProxy.IDbObjectsInfoService.SchemaInfo[]> GetSchemasAsync();
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -443,7 +443,7 @@ namespace SoapProxy.IDbObjectsInfoService
             return ((SoapProxy.IDbObjectsInfoService.IDbObjectsInfoService)(this)).GetForeignKeysAsync(inValue);
         }
         
-        public System.Threading.Tasks.Task<SoapProxy.IDbObjectsInfoService.ArrayOfString> GetSchemasAsync()
+        public System.Threading.Tasks.Task<SoapProxy.IDbObjectsInfoService.SchemaInfo[]> GetSchemasAsync()
         {
             return base.Channel.GetSchemasAsync();
         }

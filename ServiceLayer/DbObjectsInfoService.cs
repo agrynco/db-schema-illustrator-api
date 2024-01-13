@@ -8,15 +8,9 @@ public class DbObjectsInfoService : IDbObjectsInfoService
 {
     private readonly string _connectionString;
 
-    // public DbObjectsInfoService(IDbObjectsInfoServiceConfiguration dbObjectsInfoServiceConfiguration)
-    // {
-    //     _connectionString = dbObjectsInfoServiceConfiguration.ConnectionString;
-    // }
-
-    public DbObjectsInfoService()
+    public DbObjectsInfoService(IDbObjectsInfoServiceConfiguration dbObjectsInfoServiceConfiguration)
     {
-        _connectionString =
-            "Server=127.0.0.1;Database=AdventureWorks2022;User Id=sa;Password=k6bR%YM3;TrustServerCertificate=true;";
+        _connectionString = dbObjectsInfoServiceConfiguration.ConnectionString;
     }
 
     public ForeignKeyInfo[] GetForeignKeys(string schemaName)
@@ -31,7 +25,7 @@ public class DbObjectsInfoService : IDbObjectsInfoService
         using SqlDataReader reader = sqlCommand.ExecuteReader();
 
         List<ForeignKeyInfo> foreignKeys = new();
-        
+
         while (reader.Read())
         {
             foreignKeys.Add(new ForeignKeyInfo
@@ -47,7 +41,7 @@ public class DbObjectsInfoService : IDbObjectsInfoService
         return foreignKeys.ToArray();
     }
 
-    public string[] GetSchemas()
+    public SchemaInfo[] GetSchemas()
     {
         using DbConnection dbConnection = new SqlConnection(_connectionString);
 
@@ -64,9 +58,12 @@ public class DbObjectsInfoService : IDbObjectsInfoService
             schemas.Add(dbDataReader.GetString(0));
         }
 
-        return schemas.ToArray();
+        return schemas.Select(schema => new SchemaInfo
+        {
+            Name = schema
+        }).ToArray();
     }
-    
+
     public TableInfo[] GetTables(string schemaName)
     {
         using var sqlConnection = new SqlConnection(_connectionString);

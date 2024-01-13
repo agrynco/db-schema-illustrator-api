@@ -8,7 +8,7 @@
     "namespaceMappings": [
       "*, SoapProxy.IDbObjectsInfoService"
     ],
-    "outputFile": "DbObjectsInfoServiceClient.cs",
+    "outputFile": "IDbObjectsInfoService.cs",
     "references": [
       "Microsoft.AspNetCore.Http, {Microsoft.AspNetCore.Http, 2.2.2}",
       "Microsoft.AspNetCore.Http.Abstractions, {Microsoft.AspNetCore.Http.Abstractions, 2.2.0}",
