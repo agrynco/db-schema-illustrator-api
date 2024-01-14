@@ -19,9 +19,9 @@ builder.AddSerilog();
 
 builder.Services.AddTransient<IDbObjectsInfoService>(_ =>
 {
-    const DbObjectsInfoServiceClient.EndpointConfiguration endpointConfiguration = DbObjectsInfoServiceClient.EndpointConfiguration.BasicHttpBinding_IDbObjectsInfoService_soap;
-    const string remoteAddress = "http://localhost:5000/DbObjectsInfoService.asmx";
-    return new DbObjectsInfoServiceClient(endpointConfiguration, remoteAddress);
+    const DbObjectsInfoServiceClient.EndpointConfiguration ENDPOINT_CONFIGURATION = DbObjectsInfoServiceClient.EndpointConfiguration.BasicHttpBinding_IDbObjectsInfoService_soap;
+    const string REMOTE_ADDRESS = "http://localhost:5000/DbObjectsInfoService.asmx";
+    return new DbObjectsInfoServiceClient(ENDPOINT_CONFIGURATION, REMOTE_ADDRESS);
 });
 
 builder.Services.AddMvc().AddNewtonsoftJson(options =>
