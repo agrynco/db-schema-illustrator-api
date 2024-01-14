@@ -4,13 +4,18 @@ using System.Reflection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
+using SoapProxy;
 using SoapProxy.IDbObjectsInfoService;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+builder.Logging.ClearProviders();
+builder.AddSerilog();
 
 builder.Services.AddTransient<IDbObjectsInfoService>(_ =>
 {
@@ -43,10 +48,6 @@ builder.Services.AddSwaggerGen(c =>
 
 WebApplication app = builder.Build();
 
-// var dbObjectsInfoServiceClient = new DbObjectsInfoServiceClient();
-// GetTablesResponse? tables = dbObjectsInfoServiceClient.GetTablesAsync("Person").GetAwaiter().GetResult();
-//
-// Console.WriteLine(tables.Body.GetTablesResult.Length);
 
 app.UseSwagger();
 app.UseSwaggerUI();

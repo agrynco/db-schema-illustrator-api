@@ -1,10 +1,15 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Logging;
 using ServiceLayer;
 using SoapCore;
+using SoapProxy;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+builder.Logging.ClearProviders();
+builder.AddSerilog();
 
 builder.Services.AddSoapCore();
 
