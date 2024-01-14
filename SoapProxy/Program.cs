@@ -37,7 +37,7 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "My API",
+        Title = "SOAP Proxy",
         Version = "v1"
     });
 
