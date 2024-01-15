@@ -3,7 +3,7 @@
   "version": "2.1.0",
   "ExtendedData": {
     "inputs": [
-      "http://localhost:5000/DbObjectsInfoService.asmx"
+      "https://localhost:5000/DbObjectsInfoService.asmx"
     ],
     "namespaceMappings": [
       "*, SoapProxy.IDbObjectsInfoService"
