@@ -462,6 +462,7 @@ namespace SoapProxy.IDbObjectsInfoService
                 result.ReaderQuotas = System.Xml.XmlDictionaryReaderQuotas.Max;
                 result.MaxReceivedMessageSize = int.MaxValue;
                 result.AllowCookies = true;
+                result.Security.Mode = System.ServiceModel.BasicHttpSecurityMode.Transport;
                 return result;
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
@@ -471,7 +472,7 @@ namespace SoapProxy.IDbObjectsInfoService
         {
             if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_IDbObjectsInfoService_soap))
             {
-                return new System.ServiceModel.EndpointAddress("http://localhost:5000/DbObjectsInfoService.asmx");
+                return new System.ServiceModel.EndpointAddress("https://localhost:5000/DbObjectsInfoService.asmx");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }

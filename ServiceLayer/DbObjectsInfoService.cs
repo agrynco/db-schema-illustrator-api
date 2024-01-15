@@ -48,7 +48,7 @@ public class DbObjectsInfoService : IDbObjectsInfoService
         dbConnection.Open();
 
         using DbCommand dbCommand = dbConnection.CreateCommand();
-        dbCommand.CommandText = "SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA";
+        dbCommand.CommandText = "SELECT SCHEMA_NAME(schema_id) AS SchemaName FROM sys.tables GROUP BY schema_id";
 
         using DbDataReader dbDataReader = dbCommand.ExecuteReader();
 

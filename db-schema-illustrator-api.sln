@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLayerTests", "Servic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{0D95E515-5EB6-4441-A659-0F60B572B731}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "export-to-pdf", "export-to-pdf\export-to-pdf.csproj", "{CCAF3ADA-1DA0-4E33-9CB0-A3E30DF95CFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{0D95E515-5EB6-4441-A659-0F60B572B731}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D95E515-5EB6-4441-A659-0F60B572B731}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D95E515-5EB6-4441-A659-0F60B572B731}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCAF3ADA-1DA0-4E33-9CB0-A3E30DF95CFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCAF3ADA-1DA0-4E33-9CB0-A3E30DF95CFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCAF3ADA-1DA0-4E33-9CB0-A3E30DF95CFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCAF3ADA-1DA0-4E33-9CB0-A3E30DF95CFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

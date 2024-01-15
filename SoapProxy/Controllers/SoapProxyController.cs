@@ -14,13 +14,13 @@ public class SoapProxyController : ApiControllerBase
 
     [HttpGet]
     [Route("tables/{schemaName}")]
-    public async Task<IActionResult> GetTables()
+    public async Task<IActionResult> GetTables(string schemaName)
     {
         var request = new GetTablesRequest
         {
             Body = new GetTablesRequestBody
             {
-                schemaName = "Person"
+                schemaName = schemaName
             }
         };
 
@@ -29,7 +29,9 @@ public class SoapProxyController : ApiControllerBase
 
     [HttpGet]
     [Route("foreign-keys/{schemaName}")]
-    public async Task<IActionResult> GetForeignKeys(string schemaName)
+    public async Task<IActionResult> GetForeignKeys(
+        string schemaName
+        )
     {
         var request = new GetForeignKeysRequest
         {
